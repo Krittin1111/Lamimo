@@ -1,0 +1,379 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.header h1 a {
+    text-decoration: none; /* ลบเส้นใต้ */
+    display: inline-block; /* ใช้ inline-block เพื่อให้สามารถปรับระยะห่างได้ */
+    padding: 20px 30px; /* เพิ่ม Padding เพื่อสร้างระยะห่าง */
+    margin: 10px 0; /* เพิ่ม Margin บน-ล่าง 10px */
+    margin-left: 32px; /* ขยับข้อความมาทางขวา */
+    text-align: left; /* จัดข้อความให้อยู่ด้านซ้าย */
+    font-size: 40px; /* ขยายขนาดข้อความ */
+    font-weight: bold; /* ทำให้ข้อความหนา */
+    color: #333; /* สีข้อความ */
+}
+
+.header h1 a:hover {
+    color: #555; /* เปลี่ยนสีเมื่อ Hover */
+    text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ Hover */
+}
+
+/* Main container */
+.container {
+    display: flex;
+    justify-content: space-between; /* แยก Sidebar และ Main Content ออกจากกัน */
+    align-items: stretch; /* ยืดความสูงของทั้งสองส่วนให้เท่ากัน */
+    padding: 40px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 90vh; /* ให้ Container มีความสูงเต็มจอ */
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    border: 2px solid #EFEFFD; /* เส้นขอบสีฟ้าอ่อน */
+    border-radius: 12px; /* มุมโค้งมน */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้ดูนุ่ม */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%; /* เพิ่มขนาด Sidebar เล็กน้อย */
+    min-width: 320px; /* เพิ่มความกว้างขั้นต่ำ */
+    background-color: #f3f1ff; /* พื้นหลังม่วงจาง */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar img {
+    width: 100px; /* ขยายรูปภาพโปรไฟล์ */
+    height: 100px; /* ขยายรูปภาพโปรไฟล์ */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เพิ่มมิติให้รูปภาพ */
+}
+
+.sidebar h2 {
+    font-size: 20px; /* ขยายขนาดข้อความหัวข้อ */
+    font-weight: bold;
+    color: #4c4c9d; /* ข้อความสีม่วงเข้ม */
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #4c4c9d; /* ข้อความใน Sidebar สีม่วงเข้ม */
+    font-size: 18px; /* ขยายขนาดข้อความ */
+    display: flex;
+    align-items: center; /* จัดแนวกลางระหว่างไอคอนและข้อความ */
+    gap: 15px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+    padding: 20px; /* เพิ่ม Padding ให้ดูสมดุล */
+    border-radius: 10px; /* เพิ่มความโค้งมนของปุ่ม */
+    background-color: #ffffff; /* พื้นหลังขาว */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #e6e6fa; /* พื้นหลังม่วงอ่อนเมื่อ Hover */
+    color: #333; /* เปลี่ยนสีข้อความเป็นเข้มเมื่อ Hover */
+}
+
+.sidebar a img {
+    width: 36px; /* เพิ่มขนาดไอคอน */
+    height: 36px; /* เพิ่มขนาดไอคอน */
+    margin-top: 10px; /* ขยับไอคอนลงมาเล็กน้อย */
+    flex-shrink: 0; /* ป้องกันการบีบไอคอน */
+    vertical-align: middle; /* จัดไอคอนให้อยู่ตรงกลาง */
+}
+
+
+/* Main Content */
+.main-content {
+    width: 400px;
+    background: #f9f9f9;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 25px;
+    /* Center-aligns text inside main-content */
+}
+
+.main-content h1{
+    font-size: 32px; /* ขนาดตัวอักษรหัวข้อ */
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+/* Form Styling */
+.form label {
+    display: block; /* แสดงข้อความแต่ละฟิลด์ในบรรทัดใหม่ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.birth {
+    display: block; /* แสดงข้อความแต่ละฟิลด์ในบรรทัดใหม่ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    margin-bottom: 5px;
+    color: #333;
+}
+/* Date of Birth Dropdown */
+.date select {
+    width: 30%; /* กำหนดขนาดช่องเลือก */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 5px; /* ระยะห่างระหว่างช่อง */
+    margin-bottom: 35px; /* ระยะด้านล่าง */
+}
+
+/* Gender */
+.gender-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.gender-container label {
+    display: block; /* แสดงข้อความแต่ละฟิลด์ในบรรทัดใหม่ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.gender-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.password h3 {
+    margin-top: 30px; /* ระยะห่างด้านบน */
+    font-size: 25px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* หนา */
+    color: #333; /* สีข้อความ */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+}
+/* Form Group */
+.password-change .form-group {
+    margin-bottom: 20px; /* ระยะห่างระหว่างช่องกรอกข้อมูล */
+}
+
+.password-change input[type="password"] {
+    width: 100%; /* ครอบคลุมพื้นที่เต็ม */
+    padding: 12px 15px; /* ระยะห่างภายในช่อง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    border: 1px solid #ccc; /* ขอบช่องสีเทา */
+    border-radius: 5px; /* มุมมน */
+    background-color: #fff; /* พื้นหลังสีขาว */
+    color: #333; /* สีข้อความ */
+    margin-bottom: 5px; /* ระยะห่างด้านล่างระหว่างช่อง */
+    transition: border-color 0.3s ease; /* เพิ่มเอฟเฟกต์เวลาโฟกัส */
+}
+
+.password-change input[type="password"]:focus {
+    border-color: #696969; /* เปลี่ยนสีขอบเมื่อโฟกัส */
+    outline: none; /* ลบกรอบ */
+    box-shadow: #696969; /* เพิ่มเงา */
+}
+
+
+
+/* Save Button */
+.password-change .button {
+    text-align: left; /* จัดปุ่มไปทางซ้าย */
+}
+
+.password-change .button .save {
+    display: inline-block;
+    background-color: #000; /* สีพื้นปุ่ม */
+    color: #fff; /* สีข้อความ */
+    padding: 12px 30px; /* เพิ่ม Padding */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* เน้นข้อความ */
+    border-radius: 4px; /* มุมมน */
+    text-decoration: none; /* ลบเส้นใต้ */
+    transition: background-color 0.3s, transform 0.3s; /* เอฟเฟกต์ */
+}
+
+.password-change .button .save:hover {
+    background-color: #555; /* สีปุ่มเข้มขึ้น */
+    transform: translateY(-3px); /* ขยับขึ้นเล็กน้อย */
+}
+
+.button {
+    text-align: left;
+    margin-top: 5px;
+}
+/* Save Button */
+.button a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button a:hover {
+    background-color: #555;
+    transform: translateY(-3px);
+}
+
+
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #E6E6FA;
+    margin-top: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-links div {
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.footer-links a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #777;
+    margin: 15px auto;
+    width: 100%;
+}
+
+.footer-policies {
+    text-align: center;
+}
+
+.footer-policies p {
+    margin: 5px 0;
+}
+
+.footer-policies p a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-policies p a:hover {
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .content-wrapper,
+    header,
+    footer {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
