@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMIMO</title>
+    <link rel="stylesheet" href="account detail.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>
+            <a href="Home.html">LAMIMO</a>
+        </h1>
+    </header>
+
+    <!-- Content Wrapper for Main Content and Footer -->
+    <div class="content-wrapper">
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="image/account/profile.png" alt="Profile Picture">
+                    <h2>Hello</h2>
+                </div>
+                <a href="orders.html"><img src="image/account/orders.png" alt="Orders Icon"> Orders</a>
+                <a href="addresses.html"><img src="image/account/addresses.png" alt="Address Icon"> Addresses</a>
+                <a href="account detail.html"><img src="image/account/account.png" alt="Account Details Icon"> Account
+                    details</a>
+                <a href="#"><img src="image/account/coupons.png" alt="Coupons Icon"> My Coupons</a>
+                <a href="#"><img src="image/account/log out.png" alt="Logout Icon"> Log out</a>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="account">
+                    <h1>Account details</h1>
+                </div>
+
+                <div class="form">
+                    <form action="/action_page.php">
+                        <label for="fname">Name*</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="lname">Last name*</label><br>
+                        <input type="text" id="lname" name="lname"><br><br>
+                        <label for="Display">Display name *</label><br>
+                        <input type="text" id="Display" name="Display"><br><br>
+                        <label for="email">Email address *</label><br>
+                        <input type="email" id="email" name="email"><br><br>
+                    </form>
+                </div>
+        
+    
+
+                <div class="birth">
+                    <p>Date of birth</p>
+                </div>
+
+                <div class="date">
+                    <form action="/action_page.php">
+                        <div class="birth-date">
+                            <!-- ตัวเลือกวัน -->
+                            <select id="day" required>
+                                <option value="" disabled selected>Day</option>
+                                <script>
+                                    for (let i = 1; i <= 31; i++) {
+                                        document.write(`<option value="${i}">${i}</option>`);
+                                    }
+                                </script>
+                            </select>
+                
+                            <!-- ตัวเลือกเดือน -->
+                            <select id="month" required>
+                                <option value="" disabled selected>Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                
+                            <!-- ตัวเลือกปี -->
+                            <select id="year" required>
+                                <option value="" disabled selected>Year</option>
+                                <script>
+                                    const currentYear = new Date().getFullYear();
+                                    for (let i = currentYear; i >= 1900; i--) {
+                                        document.write(`<option value="${i}">${i}</option>`);
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="gender-container">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                
+                <div class="password">
+                    <h3>Password change</h3>
+                </div>
+        
+                <div class="password-change">
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <input type="password" placeholder="Current password (leave blank to leave unchanged)">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="New password (leave blank to leave unchanged)">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Confirm new password">
+                        </div>
+                    </form>
+
+                </div>
+        
+                
+                
+                <!-- Save Button -->
+                <div class="button">
+                    <a href="#" class="save">Save changes</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div>
+                    <h4>ABOUT US</h4>
+                    <a href="#">Store Locations</a>
+                </div>
+                <div>
+                    <h4>CUSTOMER SERVICE</h4>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div>
+                    <h4>FOLLOW US</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="image/facbook.png" alt="Facebook"></a>
+                        <a href="#"><img src="image/ig.png" alt="Instagram"></a>
+                        <a href="#"><img src="image/line.png" alt="Line"></a>
+                        <a href="#"><img src="image/x.png" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Footer Policies -->
+            <div class="footer-policies">
+                <p>&copy; 2024 LAMIMO. All rights reserved</p>
+                <p>
+                    <a href="#">Cookies Policy</a> |
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
