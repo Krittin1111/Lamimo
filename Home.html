@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMIMO</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-and-menu">
+            <h1>LAMIMO</h1>
+            <div class="tablist" role="tablist">
+                <!-- แท็บ WOMEN -->
+                <button class="tab" id="women-tab" role="tab" aria-selected="true" aria-controls="women-content">
+                    WOMEN
+                </button>
+                <!-- แท็บ MEN -->
+                <button class="tab" id="men-tab" role="tab" aria-selected="false" aria-controls="men-content" tabindex="-1">
+                    MEN
+                </button>
+            </div>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <img src="image/search.png" alt="Search Icon" width="20">
+        </div>
+        <div class="menu icons">
+            <a href="account.html"><img src="image/account.png" alt="Account Icon" width="35"></a>
+            <a href="#"><img src="image/Heart.png" alt="Heart Icon" width="35"></a>
+            <a href="#"><img src="image/Cart.png" alt="Cart Icon" width="35"></a>
+        </div>
+    </header>
+    <!-- เนื้อหาสำหรับ WOMEN -->
+    <div id="women-content" class="Gender" role="tabpanel" aria-labelledby="women-tab">
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <a href="#">Promotion</a>
+            <a href="#">New in</a>
+            <div class="dropdown">
+                <a href="#">Clothing</a>
+                <div class="dropdown-content">
+                    <a href="#">Shirts</a>
+                    <a href="#">T-Shirts</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Jeans</a>
+                    <a href="#">Blouses</a>
+                    <a href="#">Trousers</a>
+                    <a href="#">Shorts</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">Shoes</a>
+                <div class="dropdown-content">
+                    <a href="#">Trainers</a>
+                    <a href="#">Heels</a>
+                    <a href="#">Boots</a>
+                    <a href="#">Flat Shoes</a>
+                    <a href="#">Flat Sandals</a>
+                    <a href="#">Loafers</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#">Accessories</a>
+                <div class="dropdown-content">
+                    <a href="#">Hair Accessories</a>
+                    <a href="#">Socks&Tights</a>
+                    <a href="#">Hats</a>
+                    <a href="#">Caps</a>
+                    <a href="#">Sunglasses</a>
+                    <a href="#">Bags</a>
+                    <a href="#">Earrings</a>
+                    <a href="#">Necklaces</a>
+                    <a href="#">Bracelets</a>
+                </div>
+            </div>
+
+            <a href="#">Trending</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="section-title">Find The Best Fashion Style For You</div>
+            <img src="image/Main Fashion.jpg" alt="Main Fashion Image" class="main-image">
+
+            <div class="section-title">New Collection</div>
+            <div class="collection">
+                <div class="collection-item">
+                    <img src="image/shirt1.jpg" alt="Fashion Item 1">
+                    <a href="#" class="button">SHOP NOW</a>
+                </div>
+                <div class="collection-item">
+                    <img src="image/shirt2.jpg" alt="Fashion Item 2">
+                    <a href="#" class="button">SHOP NOW</a>
+                </div>
+                <div class="collection-item">
+                    <img src="image/skirt.jpg" alt="Fashion Item 3">
+                    <a href="#" class="button">SHOP NOW</a>
+                </div>
+            </div>
+
+            <div class="section-title">Best Fashion</div>
+            <img src="image/best fahion.jpeg" alt="Best Fashion Image" class="main-image">
+        </div>
+    </div>
+
+    <!-- เนื้อหาสำหรับ MEN -->
+    <div id="men-content" class="content" role="tabpanel" aria-labelledby="men-tab" hidden>
+        <p>Content for Men's products.</p>
+    </div>
+
+    <script>
+        // JavaScript สำหรับควบคุมการทำงานของแท็บ
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('[role="tabpanel"]');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // ลบสถานะ active จากแท็บและเนื้อหาที่ถูกเลือกก่อนหน้า
+                tabs.forEach(t => {
+                    t.setAttribute('aria-selected', 'false');
+                    t.setAttribute('tabindex', '-1');
+                });
+                contents.forEach(content => content.hidden = true);
+
+                // ตั้งค่ากับแท็บและเนื้อหาที่ถูกเลือกใหม่
+                tab.setAttribute('aria-selected', 'true');
+                tab.removeAttribute('tabindex');
+                const contentId = tab.getAttribute('aria-controls');
+                document.getElementById(contentId).hidden = false;
+            });
+        });
+    </script>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div>
+                    <h4>ABOUT US</h4>
+                    <a href="#">Store Locations</a>
+                </div>
+                <div>
+                    <h4>CUSTOMER SERVICE</h4>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div>
+                    <h4>FOLLOW US</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="image/facbook.png" alt="Facebook"></a>
+                        <a href="#"><img src="image/ig.png" alt="Instagram"></a>
+                        <a href="#"><img src="image/line.png" alt="Line"></a>
+                        <a href="#"><img src="image/x.png" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Footer Policies -->
+            <div class="footer-policies">
+                <p>&copy; 2024 LAMIMO. All rights reserved</p>
+                <p>
+                    <a href="#">Cookies Policy</a> |
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>
