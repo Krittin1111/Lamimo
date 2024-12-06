@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="addresses.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>LAMIMO</h1>
+    </header>
+
+    <!-- Content Wrapper for Main Content and Footer -->
+    <div class="content-wrapper">
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="image/account/profile.png" alt="Profile Picture">
+                    <h2>Hello</h2>
+                </div>
+                <a href="orders.html"><img src="image/account/orders.png" alt="Orders Icon"> Orders</a>
+                <a href="addresses.html"><img src="image/account/addresses.png" alt="Address Icon"> Addresses</a>
+                <a href="account detail.html"><img src="image/account/account.png" alt="Account Details Icon"> Account details</a>
+                <a href="#"><img src="image/account/coupons.png" alt="Coupons Icon"> My Coupons</a>
+                <a href="#"><img src="image/account/log out.png" alt="Logout Icon"> Log out</a>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="address">
+                    <img src="image/addresses/addresses.png" alt="Address logo" class="Address logo">
+                    <h1>Addresses</h1>
+                </div>
+
+                <div class="form">
+                    <h2>Shipping address</h2>
+
+                    <form action="/action_page.php">
+                        <label for="fname">Name*</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="address">Address *</label><br>
+                        <input type="text" id="lname" name="address"><br><br>
+                        <label for="city">Town/City *</label><br>
+                        <input type="text" id="lname" name="city"><br><br>
+                        <label for="county">State / County *</label><br>
+                        <input type="text" id="lname" name="county"><br><br>
+                        <label for="zip">Postcode / ZIP *</label><br>
+                        <input type="tel" id="lname" name="zip"><br><br>
+                        <label for="phone">Phone Number *</label><br>
+                        <input type="tel" id="lname" name="phone"><br><br>
+                        <label for="email">Email address *</label><br>
+                        <input type="email" id="lname" name="email"><br><br>
+                        <label for="note">Order notes (optional)</label><br>
+                        <textarea id="note" name="note" rows="4"
+                        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea><br><br>
+
+
+                    </form>
+                </div>
+                <div class="button">
+                    <a href="#" class="start-shopping-button">Save address</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div>
+                    <h4>ABOUT US</h4>
+                    <a href="#">Store Locations</a>
+                </div>
+                <div>
+                    <h4>CUSTOMER SERVICE</h4>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div>
+                    <h4>FOLLOW US</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="image/facbook.png" alt="Facebook"></a>
+                        <a href="#"><img src="image/ig.png" alt="Instagram"></a>
+                        <a href="#"><img src="image/line.png" alt="Line"></a>
+                        <a href="#"><img src="image/x.png" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Footer Policies -->
+            <div class="footer-policies">
+                <p>&copy; 2024 LAMIMO. All rights reserved</p>
+                <p>
+                    <a href="#">Cookies Policy</a> |
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
