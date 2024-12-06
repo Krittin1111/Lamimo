@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #E6E6FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    /* ระยะห่างระหว่างโลโก้และเมนู */
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.tablist {
+    display: flex;
+    gap: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6f63c6; /* สีม่วงเข้มสำหรับตัวอักษร */
+    background-color: #E6E6FA; /* พื้นหลังสีม่วงอ่อน */
+    border: 2px solid #d6cfff; /* สีขอบเข้ากับโทนสีเว็บไซต์ */
+    border-radius: 25px; /* รูปทรงโค้งมน */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* เพิ่มความนุ่มนวลเมื่อมีการเปลี่ยนแปลง */
+}
+
+.tab:hover {
+    background-color: #d6cfff; /* สีม่วงเข้มขึ้นเมื่อโฮเวอร์ */
+    color: #fff; /* ตัวอักษรสีขาวเมื่อโฮเวอร์ */
+    border-color: #6f63c6; /* ขอบสีม่วงเข้ม */
+    transform: scale(1.05); /* ขยายเล็กน้อย */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+/* สไตล์เมื่อถูกเลือก */
+.tab:focus, .tab[aria-selected="true"] {
+    outline: none;
+    background-color: #6f63c6; /* พื้นหลังม่วงเข้ม */
+    color: #fff; /* ตัวอักษรสีขาว */
+    border-color: #6f63c6; /* ขอบสีเดียวกัน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* เงาเด่นชัดขึ้น */
+}
+
+/* เพิ่มการเข้าถึงด้วย keyboard */
+.tab:focus-visible {
+    outline: 2px dashed #6f63c6; /* กรอบสีม่วงเมื่อใช้คีย์บอร์ด */
+}
+
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 55px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    /* ระยะห่างระหว่างไอคอน */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 15px; /* เพิ่มขนาด Padding เพื่อให้ดูสมดุล */
+    border-radius: 25px; /* มุมมนแบบ Pill Shape */
+    transition: all 0.3s ease-in-out; /* เพิ่ม Transition เพื่อให้การเปลี่ยนแปลงดูนุ่มนวล */
+    background-color: transparent; /* เริ่มต้นด้วยพื้นหลังโปร่งใส */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
+}
+
+.menu a:hover {
+    background-color: #d6cfff; /* สีฟ้าสดใสเมื่อโฮเวอร์ */
+    color: #fff; /* ข้อความสีขาวเมื่อโฮเวอร์ */
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อโฮเวอร์ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้เด่น */
+}
+
+.menu a.active {
+    background-color:  #d6cfff; /* สีพื้นหลังของลิงก์ที่ active */
+    color: black; /* สีตัวอักษรดำ */
+    border: 2px solid  #d6cfff; /* ขอบล้อมรอบด้วยสีม่วงเข้ม */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้โดดเด่น */
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a.active:hover {
+    background-color: #6f63c6; /* เปลี่ยนเป็นสีเข้มขึ้นเมื่อโฮเวอร์ */
+    transform: scale(1.08); /* ขยายเพิ่มอีกเล็กน้อย */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #e0f7ec; /* สีพื้นหลังของแถบการนำทาง */
+    padding: 15px 20px; /* เพิ่ม padding ให้แถบดูโปร่งสบายขึ้น */
+    display: flex;
+    justify-content: center; /* จัดลิงก์ให้อยู่กลางในแนวนอน */
+    align-items: center; /* จัดลิงก์ให้อยู่กลางในแนวตั้ง */
+    gap: 100px; /* ระยะห่างระหว่างหมวดหมู่ */
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
+    border-radius: 8px; /* ทำมุมโค้งมน */
+}
+
+/* ลิงก์ใน Navbar */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px; /* เพิ่ม padding ให้ข้อความสมดุล */
+    border-radius: 5px; /* ทำมุมลิงก์ให้โค้งมน */
+    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเคลื่อนไหวเมื่อ hover */
+    display: flex;
+    justify-content: center; /* จัดข้อความในลิงก์ให้อยู่กึ่งกลางแนวนอน */
+    align-items: center; /* จัดข้อความในลิงก์ให้อยู่กึ่งกลางแนวตั้ง */
+    min-width: 120px; /* กำหนดความกว้างขั้นต่ำของลิงก์ให้เท่ากัน */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+}
+
+/* Hover Effect */
+.navbar a:hover {
+    background-color: #b3e2cc; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #222; /* ปรับสีตัวอักษรเมื่อ hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเล็กน้อย */
+}
+
+/* เมนูแบบดรอปดาวน์ */
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-content {
+    display: none; /* ซ่อนเมนูย่อย */
+    position: absolute;
+    background-color: #ffffff; /* สีพื้นหลังของเมนูย่อย */
+    min-width: 250px; /* ความกว้างขั้นต่ำของเมนูย่อย */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    border-radius: 4px; /* ทำมุมโค้ง */
+    z-index: 1000;
+    margin-top: 10px;
+    padding: 10px 0; /* เพิ่ม padding ภายในเมนูย่อย */
+}
+
+/* ลิงก์ในเมนูย่อย */
+.dropdown-content a {
+    color: #333; /* สีตัวอักษรในเมนูย่อย */
+    padding: 10px 20px; /* เพิ่ม padding ให้สมดุล */
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่มเอฟเฟกต์ */
+}
+
+/* Hover ในเมนูย่อย */
+.dropdown-content a:hover {
+    background-color: #f0f0f0; /* สีพื้นหลังเมื่อ hover */
+    color: #000; /* สีตัวอักษรเมื่อ hover */
+}
+
+/* แสดงเมนูย่อยเมื่อชี้เมาส์ */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out; /* เพิ่มแอนิเมชัน */
+}
+
+/* เอฟเฟกต์แอนิเมชัน */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Main Content */
+.content {
+    padding: 60px 30px;
+    /* เพิ่ม padding ให้กรอบหลักมีระยะขอบสวยงาม */
+    max-width: 1200px;
+    margin: 30px auto;
+    /* เพิ่ม margin ด้านบนและล่าง */
+    text-align: center;
+    background-color: #f9fafb;
+    /* พื้นหลังสีอ่อน */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาให้กล่องหลัก */
+}
+
+.section-title {
+    font-size: 28px;
+    /* ขยายขนาดฟอนต์ให้เด่นขึ้น */
+    font-weight: bold;
+    margin-bottom: 25px;
+    /* เพิ่มระยะห่างด้านล่างของหัวข้อ */
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.main-image,
+.collection img {
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    /* เพิ่มระยะห่างด้านล่างของรูปภาพ */
+}
+
+.main-image:hover,
+.collection img:hover {
+    transform: scale(1.05);
+    /* ขยายภาพเมื่อ hover */
+}
+
+.collection {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* เพิ่มระยะห่างระหว่างไอเท็ม */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    /* ทำให้แถวใหม่เกิดขึ้นเมื่อหน้าจอแคบ */
+    padding: 0 10px;
+    /* เพิ่ม padding เล็กน้อยให้กับกล่องไอเท็ม */
+}
+
+.collection-item {
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 30px;
+    /* เพิ่มระยะห่างด้านล่างของไอเท็ม */
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+    transform: translateY(-3px);
+    /* ขยับขึ้นเมื่อ hover */
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #E6E6FA;
+    margin-top: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-links div {
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.footer-links a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icons a:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #777;
+    margin: 15px auto;
+    width: 100%;
+}
+
+.footer-policies {
+    text-align: center;
+}
+
+.footer-policies p {
+    margin: 5px 0;
+}
+
+.footer-policies p a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-policies p a:hover {
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-wrapper, header, footer {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
