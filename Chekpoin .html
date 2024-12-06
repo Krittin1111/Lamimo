@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - LAMIMO</title>
+    <link rel="stylesheet" href="StyleCheckout.css">
+</head>
+
+<body>
+    <header>
+        <h1>LAMIMO</h1>
+        <input type="text" placeholder="Search">
+        <div class="header-icons">
+            <a href="#">
+                <img src="image/54616_25461.png" alt="Person Icon" width="45">
+            </a>
+            <a href="#">
+                <img src="image/4049_13522.png" alt="Heart Icon" width="45">
+            </a>
+            <a href="#">
+                <img src="image/4049_13611.png" alt="Trolley Icon" width="45">
+            </a>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <!-- Left Section -->
+        <div class="checkout-left">
+            <h2>Checkout</h2>
+            
+            <div class="section">
+                <h3><span class="step-number">1</span> SHIPPING ADDRESS</h3>
+                <form>
+                    <label>Name*</label>
+                    <input type="text" required>
+                    
+                    <label>Address*</label>
+                    <input type="text" required>
+
+                    <label>Town / City*</label>
+                    <input type="text" required>
+
+                    <label>State / County*</label>
+                    <input type="text" required>
+
+                    <label>Postcode / ZIP*</label>
+                    <input type="text" required>
+
+                    <label>Phone Number*</label>
+                    <input type="text" required>
+
+                    <label>Email Address*</label>
+                    <input type="text" required>
+
+                    <label>Phone Number*</label>
+                    <input type="text" required>
+
+                    <label>Order Notes (optional)</label>
+                    <textarea></textarea>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox">
+                        <label>No need to save additional addresses. (optional)</label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="section">
+                <h3><span class="step-number">2</span> SELECT SHIPPING OPTION</h3>
+                <div class="shipping-options">
+                    <label><input type="radio" name="shipping"> Standard Delivery (3-7 business days) - $0</label>
+                    <label><input type="radio" name="shipping"> Express Delivery (1-2 business days) - $50</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3><span class="step-number">3</span> SELECT PAYMENT METHOD</h3>
+                <div class="payment-options">
+                    <label><input type="radio" name="payment"> COD</label>
+                    <label><input type="radio" name="payment"> Direct Bank Transfer</label>
+                    <label><input type="radio" name="payment"> Credit Card</label>
+                </div>
+                <div class="credit-card-details">
+                    <label>Card Number</label>
+                    <input type="text">
+                    
+                    <label>Full Name</label>
+                    <input type="text">
+                    
+                    <label>Expiry Date</label> 
+                    <input type="text">
+                    
+                    <label>CVV Code</label>
+                    <input type="text">
+                </div>
+                <div class="checkbox-group">
+    
+                    <input type="checkbox">
+                    <label>Save this card for future faster checkout.</label>
+                </div>
+            </div>
+        </div>
+
+         <!-- Right Section -->
+         <div class="checkout-right">
+            <h3>ORDER SUMMARY</h3>
+            <div class="order-summary">
+                <div class="order-item">
+                    <span>Product</span>
+                    <span>Price</span>
+                    <span>Quantity</span>
+                    <span>Total</span>
+                </div>
+                <!-- Add order items here -->
+                <div class="order-total">
+                    <span>Order Total:</span>
+                    <span>0.00</span>
+                </div>
+                <button class="submit-order">SUBMIT ORDER</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section left-align">
+                <h3>CUSTOMER SERVICE</h3>
+                <p><a href="#">Contact us</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <p><a href="#">Store Location</a></p>
+            </div>
+            <div class="footer-section">
+                <button class="contact-button">CONTACT US</button>
+            </div>
+            <div class="footer-section social-icons">
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/line.png" alt="Line"></a>
+                <a href="#"><img src="images/email.png" alt="Email"></a>
+                <a href="#"><img src="images/x.png" alt="X"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 LAMIMO. all rights reserved</p>
+            <p><a href="#">Cookies Policy</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
