@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+header {
+    background-color: #E6E6FA;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/*ส่วนหัว*/
+header h1 {
+    color: #333;
+    padding-left: 20px;
+}
+
+header input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    width: 500px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-icons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.header-icons a img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.header-icons a img:hover {
+    transform: scale(1.1);
+}
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 10px 20px;
+    background: #fff;
+    font-size: 14px;
+    color: #888;
+}
+/* สำหรับส่วนของ Banner */
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 20px; /* ระยะห่างระหว่างสินค้า */
+    padding: 20px;
+}
+
+/* Products */
+  .product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* ทำให้การเคลื่อนไหวช้าและนุ่มนวล */
+  }
+  
+  .product:hover {
+    transform: translateY(-10px); /* เคลื่อนที่ขึ้น 10px เมื่อ hover */
+  }
+
+  .product {
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px; /* กำหนดความกว้างของกล่อง */
+    margin: 20px auto; /* จัดกึ่งกลาง */
+    padding: 15px; /* เพิ่ม Padding ภายในกล่อง */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product img {
+    width: 100%; /* ปรับขนาดภาพให้เต็มกล่อง */
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.product p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.product .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e60023;
+}
+
+.product:hover {
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อเลื่อนเมาส์ */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Pagination Styling */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.pagination-numbers {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 5px;
+}
+
+.pagination-numbers a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.pagination-numbers a:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+.pagination button {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.pagination button:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+ /* Pagination */
+ .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.pagination-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 5px;
+}
+
+.pagination-wrapper a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.pagination-wrapper a.active {
+    background: #e60023;
+    color: #fff;
+    animation: bounce 0.5s ease;
+}
+
+.pagination-wrapper a:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+.pagination button {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.pagination button:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Hide scrollbar */
+.pagination-wrapper {
+    scrollbar-width: none; /* Firefox */
+}
+
+.pagination-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+
+
+
+footer {
+    background-color: #E6E6FA;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #181616;
+}
+
+.footer-section {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-section h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+    color: #000;
+    text-decoration: none;
+}
+
+.contact-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #555;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
