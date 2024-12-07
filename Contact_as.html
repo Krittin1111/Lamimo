@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fashion Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="Contact_as.css" </head>
+
+<body>
+
+    <header>
+        <div class="logo-and-menu">
+            <h1>LAMIMO</h1>
+            <div class="tablist" role="tablist">
+                <!-- แท็บ WOMEN -->
+                <button class="tab" id="women-tab" role="tab" aria-selected="true" aria-controls="women-content">
+                    WOMEN
+                </button>
+                <!-- แท็บ MEN -->
+                <button class="tab" id="men-tab" role="tab" aria-selected="false" aria-controls="men-content"
+                    tabindex="-1">
+                    MEN
+                </button>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <img src="image/search.png" alt="Search Icon" width="20">
+        </div>
+        <div class="menu icons">
+            <a href="account.html"><img src="image/account.png" alt="Account Icon" width="35"></a>
+            <a href="#"><img src="image/Heart.png" alt="Heart Icon" width="35"></a>
+            <a href="#"><img src="image/Cart.png" alt="Cart Icon" width="35"></a>
+        </div>
+    </header>
+
+    <!-- Contact Form Container -->
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Please fill out the form below to send us a message.</p>
+
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+
+            <div class="dropdown-container">
+                <label for="help">How to help?</label>
+                <select id="help">
+                    <option value="product-questions">Product questions or issues</option>
+                    <option value="technical-support">Technical support</option>
+                    <option value="billing-inquiries">Billing inquiries</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Contact us via:</p>
+        <a href="mailto:info@fashionstore.com">info@fashionstore.com</a> |
+        <a href="tel:+1234567890">+123 456 7890</a> |
+        <a href="https://www.instagram.com/m_moukp/" target="_blank">Instagram</a> |
+        <a href="https://www.facebook.com/fashionstore" target="_blank">Facebook</a>
+        <p>&copy; 2024 Fashion Store. All rights reserved.</p>
+    </div>
+
+</body>
+
+</html>
