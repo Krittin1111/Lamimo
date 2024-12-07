@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #E6E6FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    /* ระยะห่างระหว่างโลโก้และเมนู */
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 55px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    /* ระยะห่างระหว่างไอคอน */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 15px; /* เพิ่มขนาด Padding เพื่อให้ดูสมดุล */
+    border-radius: 25px; /* มุมมนแบบ Pill Shape */
+    transition: all 0.3s ease-in-out; /* เพิ่ม Transition เพื่อให้การเปลี่ยนแปลงดูนุ่มนวล */
+    background-color: transparent; /* เริ่มต้นด้วยพื้นหลังโปร่งใส */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
+}
+
+.menu a:hover {
+    background-color: #d6cfff; /* สีฟ้าสดใสเมื่อโฮเวอร์ */
+    color: #fff; /* ข้อความสีขาวเมื่อโฮเวอร์ */
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อโฮเวอร์ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้เด่น */
+}
+
+.menu a.active {
+    background-color:  #d6cfff; /* สีพื้นหลังของลิงก์ที่ active */
+    color: black; /* สีตัวอักษรขาว */
+    border: 2px solid  #d6cfff; /* ขอบล้อมรอบด้วยสีม่วงเข้ม */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้โดดเด่น */
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a.active:hover {
+    background-color: #6f63c6; /* เปลี่ยนเป็นสีเข้มขึ้นเมื่อโฮเวอร์ */
+    transform: scale(1.08); /* ขยายเพิ่มอีกเล็กน้อย */
+}
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h1 {
+    color: #fff;
+    font-size: 24px;
+    animation: slideIn 1s ease-out;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #f9f9f9;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Contact Form Container */
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    background: linear-gradient(45deg, rgba(255, 192, 203, 0.2), rgba(135, 206, 250, 0.2));
+    z-index: -1;
+    filter: blur(10px);
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* How to help Drop-Down */
+.dropdown-container {
+    display: flex; /* ใช้ Flexbox ในการจัดวาง */
+    flex-direction: column; /* จัดเรียงในแนวตั้ง */
+    gap: 15px; /* เพิ่มช่องว่างระหว่างองค์ประกอบ */
+    margin: 0; /* ลบการจัด margin */
+    text-align: left; /* จัดข้อความให้ชิดซ้าย */
+}
+
+.dropdown-container label {
+    font-size: 14px; /* ขนาดฟอนต์ของ label */
+    color: #555; /* สีข้อความของ label */
+    font-weight: 600; /* ทำให้ตัวอักษรหนาเล็กน้อย */
+    display: block; /* บังคับให้ label อยู่ในบรรทัดของตัวเอง */
+    width: 100%; /* กำหนดความกว้างให้เต็ม */
+    text-align: left; /* ชิดซ้ายเหมือน contact-form */
+    margin-left: 0; /* ลบระยะห่างด้านซ้าย */
+}
+
+.dropdown-container select {
+    width: 100%; /* กำหนดความกว้างให้เต็มพื้นที่ */
+    padding: 12px; /* เพิ่มระยะห่างด้านใน */
+    font-size: 16px; /* กำหนดขนาดฟอนต์ของ drop-down */
+    color: #212121; /* สีจาง (เทาอ่อน) */
+    opacity: 1; /* ความโปร่งใส (ทำให้สีดูจางลง) */
+    border: 1px solid #ddd; /* เส้นขอบ */
+    border-radius: 4px; /* ขอบโค้งมน */
+    transition: box-shadow 0.3s; /* เพิ่มเอฟเฟกต์เปลี่ยนแปลงเมื่อโฟกัส */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    box-shadow: 0 4px 10px rgba(188, 172, 172, 0.15);
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer p, .footer a {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.footer a {
+    color: #f9f9f9;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+
+/* Background Animation in Footer */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 50%);
+    transform: rotate(0deg);
+    animation: rotateBg 20s infinite linear;
+}
+
+@keyframes rotateBg {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
