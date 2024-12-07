@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-shirts - LAMIMO</title>
+    <link rel="stylesheet" href="StyleProduct.css">
+</head>
+<body>
+    <header>
+        <h1>LAMIMO</h1>
+        <input type="text" placeholder="Search">
+        <div class="header-icons">
+            <a href="#">
+                <img src="image/54616_25461.png" alt="Person Icon" width="45">
+            </a>
+            <a href="#">
+                <img src="image/4049_13522.png" alt="Heart Icon" width="45">
+            </a>
+            <a href="#">
+                <img src="image/4049_13611.png" alt="Trolley Icon" width="45">
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class = "banner">
+            <div class = "banner-text">T-SHIRTS</div>
+            <img src = "image\hear.jpg" alt = "T-Shirts Banner">
+        </section>
+        
+        <section class = "breadcrumbs">
+            <p>home>Men>New In>T-Shirts</p>    
+        </section>
+        
+        <section class="product-grid">  
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+        <div class = "product">
+            <img src = "image\206116533-1-elm.avif" >
+            <p> Tee shirt</p>
+            <p class ="price">$19.99 </p>
+        </div>
+    </section>
+        
+        
+        <nav class="pagination">
+            <button class="pagination-prev">‹</button>
+            <div class="pagination-wrapper">
+                <a href="#" class="pagination-link active" data-page="1">1</a>
+                <a href="#" class="pagination-link" data-page="2">2</a>
+                <a href="#" class="pagination-link" data-page="3">3</a>
+                <a href="#" class="pagination-link" data-page="4">4</a>
+                <a href="#" class="pagination-link" data-page="5">5</a>
+            </div>
+            <button class="pagination-next">›</button>
+        </nav>
+       
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section left-align">
+                <h3>CUSTOMER SERVICE</h3>
+                <p><a href="#">Contact us</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <p><a href="#">Store Location</a></p>
+            </div>
+            <div class="footer-section">
+                <button class="contact-button">CONTACT US</button>
+            </div>
+            <div class="footer-section social-icons">
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/line.png" alt="Line"></a>
+                <a href="#"><img src="images/email.png" alt="Email"></a>
+                <a href="#"><img src="images/x.png" alt="X"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 LAMIMO. all rights reserved</p>
+            <p><a href="#">Cookies Policy</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+<script>
+        const prevButton = document.querySelector(".pagination-prev");
+        const nextButton = document.querySelector(".pagination-next");
+        const paginationLinks = document.querySelectorAll(".pagination-link");
+        const contents = document.querySelectorAll(".content");
+
+        let currentPage = 1;
+
+        function updatePagination(page) {
+            // Remove 'active' class from all links
+            paginationLinks.forEach(link => link.classList.remove("active"));
+
+            // Add 'active' class to the current link
+            const activeLink = document.querySelector(`.pagination-link[data-page="${page}"]`);
+            if (activeLink) activeLink.classList.add("active");
+
+            // Hide all content sections
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Show the corresponding content section
+            const content = document.getElementById(`page-${page}`);
+            if (content) content.classList.add("active");
+
+            // Scroll pagination to keep the current link in view
+            activeLink.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        }
+
+        paginationLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentPage = parseInt(link.getAttribute("data-page"));
+                updatePagination(currentPage);
+            });
+        });
+
+        prevButton.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination(currentPage);
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentPage < paginationLinks.length) {
+                currentPage++;
+                updatePagination(currentPage);
+            }
+        });
+    </script>
+</body>
+
+</html>
