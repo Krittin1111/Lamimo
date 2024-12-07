@@ -1,0 +1,159 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* ส่วน Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e8e4f8;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .icons span {
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  /* ส่วน Main Content */
+  .main-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .confirmation .icon {
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .confirmation h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation p {
+    color: #888;
+  }
+  
+  /* ตารางสรุปคำสั่งซื้อ */
+  .order-summary {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: collapse;
+  }
+  
+  .order-summary th, .order-summary td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .order-summary th {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .order-summary .total td {
+    font-weight: bold;
+  }
+  
+  /* ปุ่ม Return to Shop */
+  .return-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* ส่วน Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #e8e4f8;
+    color: #333;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    margin: 10px;
+  }
+  
+  .footer-icons span {
+    font-size: 24px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Animation สำหรับติ๊กถูก */
+.icon {
+  font-size: 80px;
+  color: #333;
+  margin-bottom: 20px;
+  animation: slide-up-checkmark 2s ease-out forwards;
+}
+
+/* กำหนด Animation การเลื่อนขึ้น */
+@keyframes slide-up-checkmark {
+    0% {
+      transform: translateY(50px); /* เริ่มต้นอยู่ด้านล่าง */
+      opacity: 0; /* เริ่มโปร่งใส */
+    }
+    100% {
+      transform: translateY(0); /* ย้ายมาที่ตำแหน่งปกติ */
+      opacity: 1; /* ปรากฏชัดเจน */
+    }
+  }
+
+/* ปุ่ม Return to Shop */
+.return-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.return-button:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
