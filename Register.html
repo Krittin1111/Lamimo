@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - LAMIMO</title>
+    <link rel="stylesheet" href="StyleRegiter.css">
+</head>
+
+<body>
+    <header>
+        <h1>LAMIMO</h1>
+        <input type="text" placeholder="Search">
+        <div class="header-icons">
+            <a href="#"><img src="image/54616_25461.png" alt="Person Icon" width="45"></a>
+            <a href="#"><img src="image/4049_13522.png" alt="Heart Icon" width="45"></a>
+            <a href="#"><img src="image/4049_13611.png" alt="Trolley Icon" width="45"></a>
+        </div>
+    </header>
+
+    <div class="register-container">
+        <h2>Register</h2>
+        <form class="register-form">
+            <!-- First Name -->
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+            <!-- Last Name -->
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+            <!-- Phone Number -->
+            <label for="phone-number">Phone Number</label>
+            <input type="text" id="phone-number" name="phone-number" placeholder="Enter your phone number" required>
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            
+            <!-- Password -->
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">👁️</button>
+            </div>
+            
+            <!-- Gender -->
+            <div class="gender-container">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            
+        
+            <!-- Date of Birth -->
+            <label for="birth-date">Date of birth</label>
+            <div class="birth-date">
+                <!-- Day -->
+                <select id="day" name="day" required>
+                    <option value="" disabled selected>Day</option>
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+
+                <!-- Month -->
+                <select id="month" name="month" required>
+                    <option value="" disabled selected>Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select> 
+
+                <!-- Year -->
+                <select id="year" name="year" required>
+                    <option value="" disabled selected>Year</option>
+                    <script>
+                        const currentYear = new Date().getFullYear();
+                        for (let i = currentYear; i >= 1950; i--) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <!-- Join Button -->
+            <button type="submit" class="join-button">JOIN LAMIMO</button>
+        </form>
+    </div>
+    
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section left-align">
+                <h3>CUSTOMER SERVICE</h3>
+                <p><a href="#">Contact us</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <p><a href="#">Store Location</a></p>
+            </div>
+            <div class="footer-section">
+                <button class="contact-button">CONTACT US</button>
+            </div>
+            <div class="footer-section social-icons">
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/line.png" alt="Line"></a>
+                <a href="#"><img src="images/email.png" alt="Email"></a>
+                <a href="#"><img src="images/x.png" alt="X"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 LAMIMO. all rights reserved</p>
+            <p><a href="#">Cookies Policy</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
