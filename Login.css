@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+header {
+    background-color: #E6E6FA;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header h1 {
+    color: #333;
+    padding-left: 20px;
+}
+
+header input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    width: 500px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-icons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.header-icons a img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.header-icons a img:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    background-color: #f5f5f5;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 50px; /* เพิ่ม padding เพื่อขยายความสูง */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px; /* ขยายความกว้าง */
+    text-align: center;
+}
+
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none; /* ซ่อน checkbox ดั้งเดิม */
+}
+
+.checkbox-container label {
+    font-weight: bold;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+/* สร้าง custom checkbox */
+.checkbox-container label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    border: 2px solid #666;
+    background-color: #fff;
+}
+
+/* เมื่อ checkbox ถูกเลือก */
+.checkbox-container input[type="checkbox"]:checked + label::before {
+    background-color: #333; /* เปลี่ยนสีเมื่อเลือก */
+    border-color: #333;
+    content: "✓"; /* แสดงเครื่องหมายถูก */
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.login-box button:hover {
+    background-color: #555;
+}
+
+.login-box a {
+    display: block;
+    margin: 10px 0;
+    color: #000;
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+.register-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px);
+    background-color: #f5f5f5;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่าง login-box และปุ่ม Register */
+}
+
+.register-button {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+.register-button {
+    text-decoration: none; /* ลบเส้นใต้ */
+    background-color: #000000; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 20px; /* ระยะขอบภายใน */
+    border-radius: 5px; /* มุมโค้งของปุ่ม */
+    display: inline-block; /* แสดงเป็นบล็อกแบบอินไลน์ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+
+
+.register-button:hover {
+    background-color: #777;
+}
+footer {
+    background-color: #E6E6FA;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #181616;
+}
+
+.footer-section {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-section h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+    color: #000;
+    text-decoration: none;
+}
+
+.contact-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #555;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
