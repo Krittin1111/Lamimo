@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,30 +21,33 @@
 
     <div class="register-container">
         <h2>Register</h2>
-        <form class="register-form">
+        <form class="register-form" action="process.php" method="post">
+
             <!-- First Name -->
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
 
             <!-- Last Name -->
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
 
             <!-- Phone Number -->
-            <label for="phone-number">Phone Number</label>
-            <input type="text" id="phone-number" name="phone-number" placeholder="Enter your phone number" required>
+            <label for="phonenumber">Phone Number</label>
+            <input type="text" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required>
 
             <!-- Email -->
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            
+
             <!-- Password -->
             <label for="password">Password</label>
             <div class="password-container">
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">👁️</button>
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+                    <img src="image\4049_13492.png" alt="Show Password">
+                </button>
             </div>
-            
+
             <!-- Gender -->
             <div class="gender-container">
                 <label for="gender">Gender</label>
@@ -53,19 +57,13 @@
                     <option value="female">Female</option>
                 </select>
             </div>
-            
-        
+
             <!-- Date of Birth -->
             <label for="birth-date">Date of birth</label>
             <div class="birth-date">
                 <!-- Day -->
                 <select id="day" name="day" required>
                     <option value="" disabled selected>Day</option>
-                    <script>
-                        for (let i = 1; i <= 31; i++) {
-                            document.write(`<option value="${i}">${i}</option>`);
-                        }
-                    </script>
                 </select>
 
                 <!-- Month -->
@@ -83,17 +81,11 @@
                     <option value="10">October</option>
                     <option value="11">November</option>
                     <option value="12">December</option>
-                </select> 
+                </select>
 
                 <!-- Year -->
                 <select id="year" name="year" required>
                     <option value="" disabled selected>Year</option>
-                    <script>
-                        const currentYear = new Date().getFullYear();
-                        for (let i = currentYear; i >= 1950; i--) {
-                            document.write(`<option value="${i}">${i}</option>`);
-                        }
-                    </script>
                 </select>
             </div>
 
@@ -101,14 +93,37 @@
             <button type="submit" class="join-button">JOIN LAMIMO</button>
         </form>
     </div>
-    
+
     <script>
+        // Function to toggle password visibility
         function togglePasswordVisibility() {
             const passwordField = document.getElementById('password');
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
             } else {
                 passwordField.type = 'password';
+            }
+        }
+
+        // Populate the Day and Year options dynamically using JavaScript
+        window.onload = function () {
+            // Populate days
+            const daySelect = document.getElementById('day');
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                daySelect.appendChild(option);
+            }
+
+            // Populate years (current year and going backwards)
+            const yearSelect = document.getElementById('year');
+            const currentYear = new Date().getFullYear();
+            for (let i = currentYear; i >= 1950; i--) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                yearSelect.appendChild(option);
             }
         }
     </script>
@@ -140,4 +155,5 @@
         </div>
     </footer>
 </body>
+
 </html>
