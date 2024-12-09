@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LAMIMO</title>
+    <link rel="stylesheet" href="StyleLogin.css">
+</head>
+<body>
+    <header>
+        <h1>LAMIMO</h1>
+        <input type="text" placeholder="Search">
+        <div class="header-icons">
+            <a href="#">
+                <img src="image/54616_25461.png" alt="Person Icon" width="45">
+            </a>
+            <a href="#">
+                <img src="image/4049_13522.png" alt="Heart Icon" width="45">
+            </a>
+            <a href="#">
+                <img src="image/4049_13611.png" alt="Trolley Icon" width="45">
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form  action="process-login.php" method="post">
+                
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="keep-signed-in">
+                    <label for="keep-signed-in">Keep me signed in</label>
+                </div>
+                <button type="submit">Login</button>
+                <a href="#" class="forgot"><strong>Forgot Password?</strong></a>
+                <p class="register">If you don't have an account yet, please register.</p>
+            </form>
+        </div>
+        <a href="Register.html" class="register-button">Register</a>   
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section left-align">
+                <h3>CUSTOMER SERVICE</h3>
+                <p><a href="#">Contact us</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT US</h3>
+                <p><a href="#">Store Location</a></p>
+            </div>
+            <div class="footer-section">
+                <button class="contact-button">CONTACT US</button>
+            </div>
+            <div class="footer-section social-icons">
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/line.png" alt="Line"></a>
+                <a href="#"><img src="images/email.png" alt="Email"></a>
+                <a href="#"><img src="images/x.png" alt="X"></a>
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 LAMIMO. all rights reserved</p>
+            <p><a href="#">Cookies Policy</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
