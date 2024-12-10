@@ -1,0 +1,921 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #E6E6FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    /* ระยะห่างระหว่างโลโก้และเมนู */
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.tablist {
+    display: flex;
+    gap: 10px;
+    /* เพิ่มระยะห่างระหว่างปุ่ม */
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6f63c6;
+    /* สีม่วงเข้มสำหรับตัวอักษร */
+    background-color: #E6E6FA;
+    /* พื้นหลังสีม่วงอ่อน */
+    border: 2px solid #d6cfff;
+    /* สีขอบเข้ากับโทนสีเว็บไซต์ */
+    border-radius: 25px;
+    /* รูปทรงโค้งมน */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* เพิ่มความนุ่มนวลเมื่อมีการเปลี่ยนแปลง */
+}
+
+.tab:hover {
+    background-color: #d6cfff;
+    /* สีม่วงเข้มขึ้นเมื่อโฮเวอร์ */
+    color: #fff;
+    /* ตัวอักษรสีขาวเมื่อโฮเวอร์ */
+    border-color: #6f63c6;
+    /* ขอบสีม่วงเข้ม */
+    transform: scale(1.05);
+    /* ขยายเล็กน้อย */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงา */
+}
+
+/* สไตล์เมื่อถูกเลือก */
+.tab:focus,
+.tab[aria-selected="true"] {
+    outline: none;
+    background-color: #6f63c6;
+    /* พื้นหลังม่วงเข้ม */
+    color: #fff;
+    /* ตัวอักษรสีขาว */
+    border-color: #6f63c6;
+    /* ขอบสีเดียวกัน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* เงาเด่นชัดขึ้น */
+}
+
+/* เพิ่มการเข้าถึงด้วย keyboard */
+.tab:focus-visible {
+    outline: 2px dashed #6f63c6;
+    /* กรอบสีม่วงเมื่อใช้คีย์บอร์ด */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 55px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    /* ระยะห่างระหว่างไอคอน */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 15px;
+    /* เพิ่มขนาด Padding เพื่อให้ดูสมดุล */
+    border-radius: 25px;
+    /* มุมมนแบบ Pill Shape */
+    transition: all 0.3s ease-in-out;
+    /* เพิ่ม Transition เพื่อให้การเปลี่ยนแปลงดูนุ่มนวล */
+    background-color: transparent;
+    /* เริ่มต้นด้วยพื้นหลังโปร่งใส */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเล็กน้อย */
+}
+
+.menu a:hover {
+    background-color: #d6cfff;
+    /* สีฟ้าสดใสเมื่อโฮเวอร์ */
+    color: #fff;
+    /* ข้อความสีขาวเมื่อโฮเวอร์ */
+    transform: scale(1.05);
+    /* ขยายเล็กน้อยเมื่อโฮเวอร์ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้เด่น */
+}
+
+.menu a.active {
+    background-color: #d6cfff;
+    /* สีพื้นหลังของลิงก์ที่ active */
+    color: black;
+    /* สีตัวอักษรดำ */
+    border: 2px solid #d6cfff;
+    /* ขอบล้อมรอบด้วยสีม่วงเข้ม */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้โดดเด่น */
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a.active:hover {
+    background-color: #6f63c6;
+    /* เปลี่ยนเป็นสีเข้มขึ้นเมื่อโฮเวอร์ */
+    transform: scale(1.08);
+    /* ขยายเพิ่มอีกเล็กน้อย */
+}
+
+
+/* Navigation Bar */
+.navbar {
+    background-color: #e0f7ec;
+    /* สีพื้นหลังของแถบการนำทาง */
+    padding: 15px 20px;
+    /* เพิ่ม padding ให้แถบดูโปร่งสบายขึ้น */
+    display: flex;
+    justify-content: center;
+    /* จัดลิงก์ให้อยู่กลางในแนวนอน */
+    align-items: center;
+    /* จัดลิงก์ให้อยู่กลางในแนวตั้ง */
+    gap: 100px;
+    /* ระยะห่างระหว่างหมวดหมู่ */
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเล็กน้อย */
+    border-radius: 8px;
+    /* ทำมุมโค้งมน */
+}
+
+/* ลิงก์ใน Navbar */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    /* เพิ่ม padding ให้ข้อความสมดุล */
+    border-radius: 5px;
+    /* ทำมุมลิงก์ให้โค้งมน */
+    transition: background-color 0.3s, color 0.3s;
+    /* เพิ่มการเคลื่อนไหวเมื่อ hover */
+    display: flex;
+    justify-content: center;
+    /* จัดข้อความในลิงก์ให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
+    /* จัดข้อความในลิงก์ให้อยู่กึ่งกลางแนวตั้ง */
+    min-width: 120px;
+    /* กำหนดความกว้างขั้นต่ำของลิงก์ให้เท่ากัน */
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลาง */
+}
+
+/* Hover Effect */
+.navbar a:hover {
+    background-color: #b3e2cc;
+    /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #222;
+    /* ปรับสีตัวอักษรเมื่อ hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาเล็กน้อย */
+}
+
+/* เมนูแบบดรอปดาวน์ */
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-content {
+    display: none;
+    /* ซ่อนเมนูย่อย */
+    position: absolute;
+    background-color: #ffffff;
+    /* สีพื้นหลังของเมนูย่อย */
+    min-width: 250px;
+    /* ความกว้างขั้นต่ำของเมนูย่อย */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงา */
+    border-radius: 4px;
+    /* ทำมุมโค้ง */
+    z-index: 1000;
+    margin-top: 10px;
+    padding: 10px 0;
+    /* เพิ่ม padding ภายในเมนูย่อย */
+}
+
+/* ลิงก์ในเมนูย่อย */
+.dropdown-content a {
+    color: #333;
+    /* สีตัวอักษรในเมนูย่อย */
+    padding: 10px 20px;
+    /* เพิ่ม padding ให้สมดุล */
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลาง */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* เพิ่มเอฟเฟกต์ */
+}
+
+/* Hover ในเมนูย่อย */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    /* สีพื้นหลังเมื่อ hover */
+    color: #000;
+    /* สีตัวอักษรเมื่อ hover */
+}
+
+/* แสดงเมนูย่อยเมื่อชี้เมาส์ */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+    /* เพิ่มแอนิเมชัน */
+}
+
+/* เอฟเฟกต์แอนิเมชัน */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content */
+.main-content {
+    height: 2000px;
+    /* กำหนดความสูงคงที่ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* เว้นระยะห่างระหว่าง children */
+    gap: 15px;
+    /* ระยะห่างระหว่าง product-images และ product-details */
+    padding: 40px;
+    max-width: 1400px;
+    transform: translateX(40px);
+    /* ขยับไปทางขวา 20px */
+}
+
+.breadcrumb {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* ระยะห่างระหว่างองค์ประกอบ */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างจากเนื้อหาอื่น */
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    /* ลบเส้นใต้ */
+    color: #333;
+    /* สีของลิงก์ */
+    transition: color 0.3s ease;
+    /* เอฟเฟกต์สีเมื่อ Hover */
+}
+
+.breadcrumb a:hover {
+    color: #555;
+    /* เปลี่ยนสีเมื่อ Hover */
+}
+
+.breadcrumb span {
+    color: #999;
+    /* สีของตัวแบ่ง (>) */
+}
+
+.product-details {
+    flex: 2;
+    /* เพิ่มพื้นที่ให้กับ product-details */
+    text-align: left;
+    /* จัดข้อความชิดซ้าย */
+    margin: 0;
+}
+
+/* Product Images Section */
+.product-images {
+    flex: 2;
+    /* ให้ส่วนรูปภาพมีพื้นที่มากกว่า */
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+    /* ระยะห่างระหว่างรูปย่อและรูปใหญ่ */
+    justify-content: flex-start;
+    /* จัดให้อยู่ชิดซ้าย */
+    align-items: flex-start;
+    /* จัดให้อยู่ด้านบน */
+    margin: 0;
+    /* ลบระยะห่างด้านข้าง */
+    padding: 0;
+    /* ลบ Padding */
+}
+
+/* Thumbnail Images */
+.thumbnail-images {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    /* ระยะห่างระหว่างรูปย่อ */
+    max-width: 100px;
+    /* จำกัดความกว้างส่วนรูปย่อ */
+    align-items: flex-start;
+    /* จัดให้อยู่ชิดซ้าย */
+    margin: 0;
+    /* ลบ margin ที่ทำให้รูปย่อไม่ชิดซ้าย */
+    padding: 0;
+    /* ลบ Padding */
+}
+
+.thumbnail-images img {
+    width: auto;
+    /* กำหนดขนาดความกว้างของรูปย่อ */
+    height: 100px;
+    /* รักษาอัตราส่วนของภาพ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เป็น pointer เมื่อชี้ */
+    border: 2px solid transparent;
+    /* เส้นขอบโปร่งใส */
+    border-radius: 5px;
+    /* มุมโค้งมน */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเบาๆ ให้ดูมีมิติ */
+    transition: all 0.3s ease;
+    /* เอฟเฟกต์เวลา Hover */
+}
+
+.thumbnail-images img:hover {
+    transform: scale(1.1);
+    /* ขยายเล็กน้อยเมื่อ Hover */
+    border: 2px solid #007bff;
+    /* เปลี่ยนสีขอบเมื่อ Hover */
+}
+
+/* Main Image */
+.main-image img {
+    width: auto;
+    /* ให้กว้างตามอัตราส่วนความสูง */
+    height: 500px;
+    /* เพิ่มความสูงของภาพ */
+    border: 2px solid #ddd;
+    /* ขอบสีเทาอ่อน */
+    border-radius: 10px;
+    /* มุมโค้งมน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงา */
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    /* จัดให้อยู่ในแนวตั้ง */
+    align-items: flex-start;
+    /* จัดชิดซ้าย */
+    gap: 20px;
+    /* เพิ่มระยะห่างระหว่าง Name และ Details */
+    margin-left: 20px;
+    /* เพิ่มระยะห่างด้านซ้าย */
+}
+
+
+.Name {
+    flex-direction: column;
+    margin-top: 0;
+    /* ปรับให้ชิด Name */
+}
+
+.Name h2 {
+    font-size: 30px;
+    color: black
+}
+
+.Name p {
+    margin-top: 20px;
+    /* เพิ่มระยะห่างด้านบน 20px */
+    font-size: 20px;
+    color: black
+}
+
+.details {
+    color: #333;
+}
+
+.details h3 {
+    margin-bottom: 10px;
+    /* เพิ่มระยะห่างด้านล่างของหัวข้อ */
+}
+
+.SQ {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    /* ระยะห่างระหว่าง size และ quantity */
+    align-items: flex-start;
+    /* จัดให้อยู่บนแนวเดียวกัน */
+
+}
+
+/* สไตล์สำหรับตัวเลือกขนาด */
+.size-selection {
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+/* ข้อความ "Size" */
+.size-selection p {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* กลุ่มตัวเลือก */
+.size-options {
+    display: flex;
+    gap: 15px;
+    /* ระยะห่างระหว่างตัวเลือก */
+    list-style: none;
+    /* ลบจุด bullet */
+    padding: 0;
+}
+
+/* ตัวเลือกแต่ละตัว */
+.size-option {
+    padding: 10px 15px;
+    border: 1px solid #000;
+    /* กรอบสีดำ หนา 2px */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    /* พื้นหลังสีขาว */
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    /* เอฟเฟกต์เวลา Hover */
+}
+
+/* Hover Effect */
+.size-option:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+}
+
+/* สไตล์เมื่อเลือก (selected) */
+.size-option[aria-checked="true"] {
+    background-color: #7f57ff;
+    /* สีพื้นหลังม่วง */
+    color: white;
+    border-color: #7f57ff;
+}
+
+.quantity-selector {
+    display: flex;
+    flex-direction: column;
+    /* จัดเรียงในแนวตั้ง */
+    align-items: center;
+    gap: 10px;
+    /* เพิ่มระยะห่างระหว่าง <p> และปุ่มควบคุม */
+    padding: 10px;
+    /* เพิ่ม Padding รอบๆ */
+    width: 150px;
+    overflow: hidden;
+    margin-top: -13px;
+    /* ลดระยะห่างเพื่อให้ตรงกับ size-selection */
+    margin-left: 20px;
+    /* เพิ่มระยะห่างด้านซ้าย 20px */
+}
+
+.quantity-selector p {
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    /* กรอบสีดำ หนา 2px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* เพิ่มมิติ */
+    background-color: #fff;
+    /* พื้นหลังสีขาว */
+    width: 150px;
+}
+
+.btn-decrease {
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    /* ระยะห่างระหว่างบรรทัด 40px */
+    outline: none;
+    box-shadow: none;
+    position: relative;
+    /* ทำให้สามารถใช้ pseudo-element */
+}
+
+.btn-increase {
+    width: 60px;
+    /* ขนาดปุ่มที่ใหญ่ขึ้น */
+    height: 30px;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    /* ระยะห่างระหว่างบรรทัด 40px */
+    outline: none;
+    box-shadow: none;
+    position: relative;
+    /* ทำให้สามารถใช้ pseudo-element */
+}
+
+.btn-decrease::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    /* ระยะจากด้านบน */
+    right: 0;
+    /* ตำแหน่งขอบขวา */
+    width: 1px;
+    /* ความกว้างของเส้น */
+    height: 40px;
+    /* ความสูงของเส้น */
+    background-color: #000;
+    /* สีของเส้น */
+
+}
+
+.btn-increase::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    /* ระยะจากด้านบน */
+    left: 0;
+    /* ตำแหน่งขอบซ้าย */
+    width: 1px;
+    /* ความกว้างของเส้น */
+    height: 40px;
+    /* ความสูงของเส้น */
+    background-color: #000;
+    /* สีของเส้น */
+}
+
+.btn-decrease:hover {
+    width: 60px;
+    height: 30px;
+    background-color: #f0f0f0;
+}
+
+.btn-increase:hover {
+    width: 60px;
+    height: 30px;
+    background-color: #f0f0f0;
+}
+
+.controls input {
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    background-color: white;
+    outline: none;
+}
+
+.WA {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+    /* ระยะห่างระหว่าง size และ quantity */
+    align-items: flex-start;
+    /* จัดให้อยู่บนแนวเดียวกัน */
+}
+
+.wish-button {
+    display: inline-block;
+    /* ทำให้ปุ่มเป็น block แบบ inline */
+    padding: 10px 20px;
+    /* ระยะห่างภายใน */
+    font-size: 16px;
+    /* ขนาดข้อความ */
+    font-weight: bold;
+    /* ตัวหนา */
+    color: #7f57ff;
+    /* สีตัวอักษร */
+    border: 2px solid #7f57ff;
+    /* กรอบสีม่วง */
+    background-color: transparent;
+    /* ไม่มีพื้นหลัง */
+    text-transform: uppercase;
+    /* ตัวอักษรใหญ่ทั้งหมด */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+    transition: all 0.3s ease;
+    /* เพิ่มเอฟเฟกต์ลื่นไหล */
+    border-radius: 4px;
+    /* มุมโค้งเล็กน้อย (ไม่จำเป็น) */
+}
+
+.wish-button:hover {
+    background-color: #7f57ff;
+    /* พื้นหลังสีม่วงเมื่อ hover */
+    color: white;
+    /* เปลี่ยนสีข้อความเป็นขาว */
+}
+
+.cart-button {
+    display: inline-block;
+    /* ทำให้ปุ่มเป็น block แบบ inline */
+    padding: 10px 20px;
+    /* ระยะห่างภายใน */
+    font-size: 16px;
+    /* ขนาดข้อความ */
+    font-weight: bold;
+    /* ตัวหนา */
+    color: white;
+    /* สีข้อความ */
+    background-color: #7f57ff;
+    /* สีพื้นหลังม่วง */
+    border: 2px solid #7f57ff;
+    /* กรอบสีม่วง */
+    border-radius: 4px;
+    /* มุมโค้งมน */
+    text-transform: uppercase;
+    /* ตัวอักษรใหญ่ทั้งหมด */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* เอฟเฟกต์ลื่นไหล */
+}
+
+.cart-button:hover {
+    background-color: #b29cff;
+    /* สีม่วงอ่อนกว่าพื้นหลังปกติ */
+    transform: scale(1.05);
+    /* ขยายเล็กน้อยเมื่อ hover */
+}
+
+.review-box {
+    margin-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
+    margin-bottom: 990px;
+    background-color: #fff9db;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 550px;
+    /* กำหนดความกว้าง */
+}
+
+.review-box .rating-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6347;
+    /* สีส้มแฟชั่น */
+}
+
+.review-box .stars {
+    color: #ffd700;
+    /* สีทอง */
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    /* เพิ่มระยะห่าง */
+    margin: 5px 0;
+}
+
+.review-box .total-ratings {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+
+}
+
+.individual-reviews {
+    transform: translateY(-950px);
+    /* ขยับขึ้น 20px */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* ระยะห่างระหว่างแต่ละรีวิว */
+    padding: 20px;
+}
+
+.review-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่าง */
+    display: flex;
+    align-items: left;
+    background: #fff;
+    border-radius: 8px;
+    /* ลดความโค้ง */
+    padding: 10px;
+    /* ลดระยะห่างภายใน */
+    width: 530px;
+    /* กำหนดความกว้าง */
+    height: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* เงาอ่อน */
+    margin: 2px auto 2px 0; /* ปรับให้ขยับซ้าย */
+}
+
+.review-item h4 {
+    font-size: 1rem;
+    /* ลดขนาดฟอนต์ของชื่อ */
+    margin: 0;
+    margin-top: 30px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.review-item p {
+    font-size: 0.8rem; /* ลดขนาดฟอนต์ของข้อความรีวิว */
+    color: #666;
+    padding-top: 1px; /* เพิ่มระยะห่างด้านบนภายใน */
+}
+
+.review-item .stars {
+    font-size: 1.5rem; /* ลดขนาดของดาว */
+    color: #ffd700;
+    margin-left: auto; /* ทำให้ดาวชิดขวา */
+    transform: translateY(-28px); /* ขยับขึ้น 10px */
+}
+
+.buy{
+    font-size: 25px;
+    transform: translateY(-450px); /* ขยับขึ้น 10px */
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #E6E6FA;
+    margin-top: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-links div {
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.footer-links a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #777;
+    margin: 15px auto;
+    width: 100%;
+}
+
+.footer-policies {
+    text-align: center;
+}
+
+.footer-policies p {
+    margin: 5px 0;
+}
+
+.footer-policies p a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-policies p a:hover {
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .content-wrapper,
+    header,
+    footer {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
