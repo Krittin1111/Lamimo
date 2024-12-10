@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish-list - LAMIMO</title>
+    <link rel="stylesheet" href="Wish_list.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>LAMIMO</h1>
+        <div class="search-bar"></div>
+        <input type="text" placeholder="Search product">
+        <img src="image/search.png" alt="Search" width="20">
+
+        <div class="header-icons">
+            <a href="#"><img src="image/account.png" alt="Person Icon" width="30"></a>
+            <a href="#"><img src="image/heart.png" alt="Heart Icon" width="30"></a>
+            <a href="#"><img src="image/cart.png" alt="Cart Icon" width="30"></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2 class="wishlist-title">Wish-list</h2>
+        <table class="wishlist-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product 1 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="image/product1.png" alt="Product 1" class="product-image">
+                            <div class="product-detail">
+                                <p>Crop Tee Shirt with Head Pin Design</p>
+                                <p>size : M </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>578.50฿</td>
+                    <td class="in-stock">In stock</td>
+                    <td><button class="add-to-cart">Add to Cart</button></td>
+                </tr>
+                <!-- Product 2 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="image/product2.png" alt="Product 2" class="product-image">
+                            <div class="product-detail">
+                                <p>Crop Tee Shirt with Head Pin Design</p>
+                                <p>size : L </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>578.50฿</td>
+                    <td class="in-stock">In stock</td>
+                    <td><button class="add-to-cart">Add to Cart</button></td>
+                </tr>
+                <!-- Product 3 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="image/product3.png" alt="Product 3" class="product-image">
+                            <div class="product-detail">
+                                <p>Crop Tee Shirt with Head Pin Design</p>
+                                <p>size : M </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>578.50฿</td>
+                    <td class="in-stock">In stock</td>
+                    <td><button class="add-to-cart">Add to Cart</button></td>
+                </tr>
+                <!-- Product 4 -->
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img src="image/product1.png" alt="Product 4" class="product-image">
+                            <div class="product-detail">
+                                <p>Crop Tee Shirt with Head Pin Design</p>
+                                <p>size : M </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>111.50฿</td>
+                    <td class="in-stock">In stock</td>
+                    <td><button class="add-to-cart">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="wishlist-actions">
+            <button class="clear-wishlist">Clear Wish list</button>
+            <button class="add-all-to-cart">Add All to Cart</button>
+        </div>
+    </main>
+
+    <div class="cart-summary"
+    <h3>Cart Summary</h3>
+    <p>Total Items : <span id="cart-count">0</span> / 50</p>
+    <!-- Footer -->
+   
+    <script src="Wish_list.js"></script>
+</body>
+
+</html>
