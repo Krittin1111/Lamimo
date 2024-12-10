@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMIMO</title>
+    <link rel="stylesheet" href="T-shirts details.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-and-menu">
+            <h1>LAMIMO</h1>
+            <div class="tablist" role="tablist">
+                <button class="tab" id="women-tab" role="tab" aria-selected="true"
+                    aria-controls="women-content">WOMEN</button>
+                <button class="tab" id="men-tab" role="tab" aria-selected="false" aria-controls="men-content"
+                    tabindex="-1">MEN</button>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <img src="image/search.png" alt="Search Icon" width="20">
+        </div>
+        <div class="menu icons">
+            <a href="account.html"><img src="image/account.png" alt="Account Icon" width="35"></a>
+            <a href="#"><img src="image/Heart.png" alt="Heart Icon" width="35"></a>
+            <a href="#"><img src="image/Cart.png" alt="Cart Icon" width="35"></a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main>
+        <!-- WOMEN Content -->
+        <div id="women-content" class="Gender" role="tabpanel" aria-labelledby="women-tab">
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <a href="#">Promotion</a>
+                <a href="#">New in</a>
+                <div class="dropdown">
+                    <a href="#">Clothing</a>
+                    <div class="dropdown-content">
+                        <a href="#">Shirts</a>
+                        <a href="T-shirts details.html">T-Shirts</a>
+                        <a href="#">Dresses</a>
+                        <a href="#">Jeans</a>
+                        <a href="#">Blouses</a>
+                        <a href="#">Trousers</a>
+                        <a href="#">Shorts</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Shoes</a>
+                    <div class="dropdown-content">
+                        <a href="#">Trainers</a>
+                        <a href="#">Heels</a>
+                        <a href="#">Boots</a>
+                        <a href="#">Flat Shoes</a>
+                        <a href="#">Flat Sandals</a>
+                        <a href="#">Loafers</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Accessories</a>
+                    <div class="dropdown-content">
+                        <a href="#">Hair Accessories</a>
+                        <a href="#">Socks & Tights</a>
+                        <a href="#">Hats</a>
+                        <a href="#">Caps</a>
+                        <a href="#">Sunglasses</a>
+                        <a href="#">Bags</a>
+                        <a href="#">Earrings</a>
+                        <a href="#">Necklaces</a>
+                        <a href="#">Bracelets</a>
+                    </div>
+                </div>
+                <a href="#">Trending</a>
+            </nav>
+
+            <!-- Main Content -->
+            <section class="main-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="home.html">Home</a>
+                    <span> &gt; </span>
+                    <a href="women-tab">Women</a>
+                    <span> &gt; </span>
+                    <a href="clothing.html">Clothing</a>
+                    <span> &gt; </span>
+                    <a href="T-shirts details.html">T-shirts</a>
+                </nav>
+
+                <!-- Product Details -->
+                <div class="product-images">
+                    <div class="thumbnail-images">
+                        <img src="image/Women/ssvnth.zone-1715325312-VWRTECP0635221002-gallery1.jpg" alt="Thumbnail 1" onclick="changeMainImage(this)">
+                        <img src="image/Women/ssvnth.zone-1715325314-VWRTECP0635221002-gallery2.jpg" alt="Thumbnail 2" onclick="changeMainImage(this)">
+                        <img src="image/Women/ssvnth.zone-1715325316-VWRTECP0635221002-gallery3.jpg" alt="Thumbnail 3" onclick="changeMainImage(this)">
+                        <img src="image/Women/ssvnth.zone-1715325318-VWRTECP0635221002-gallery4.jpg" alt="Thumbnail 4" onclick="changeMainImage(this)">
+                    </div>
+                    
+                    <!-- Main Image -->
+                    <div class="main-image">
+                        <img id="mainImage" src="image/Women/ssvnth.zone-1715325312-VWRTECP0635221002-gallery1.jpg" alt="Main Product Image">
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <div class="Name">
+                            <h2>Crop Tee Shirt with Head Design</h2>
+                            <p>578.50฿</p>
+                        </div>
+                        <div class="details">
+                            <h3>Details</h3>
+                            <p>
+                                เสื้อทีเชิ้ตทรงครอป แบรนด์ F.Fashion เนื้อผ้าคอตตอนผสมสแปนเด็กซ์
+                                ผ้าคุณภาพพรีเมียมที่นุ่มใส่สบาย
+                                เนื้อผ้ายืดหยุ่นแต่ไม่ย้วยง่ายถึงจะผ่านการซักกี่ครั้งก็ตาม ตัดเย็บทรงครอปเอวลอย
+                                แต่งดีไซน์เก๋ของงานผูกมัดที่ช่วงเอวโดยมีเข็มกลัดทองประดับ
+                                เสริมความยูนีคด้วยลายสกรีนยางโลโก้
+                                แบรนด์ที่กลางหน้าอกด้านหน้า
+                            </p>
+                        </div>
+                        <div class="SQ">
+                            <!-- Size Selection -->
+                            <div class="size-selection">
+                                <p>Size</p>
+                                <ul class="size-options" role="radiogroup" aria-label="Size">
+                                    <li class="size-option" role="radio" aria-checked="false" tabindex="0"
+                                        data-value="XS"><span>XS</span></li>
+                                    <li class="size-option" role="radio" aria-checked="false" tabindex="0"
+                                        data-value="S"><span>S</span></li>
+                                    <li class="size-option" role="radio" aria-checked="false" tabindex="0"
+                                        data-value="M"><span>M</span></li>
+                                    <li class="size-option" role="radio" aria-checked="false" tabindex="0"
+                                        data-value="L"><span>L</span></li>
+                                </ul>
+                            </div>
+                            <div class="quantity-selector">
+                                <p>Quantity</p>
+                                <div class="controls">
+                                    <button class="btn-decrease" onclick="decreaseQuantity()">-</button>
+                                    <input type="text" id="quantity" value="1" readonly>
+                                    <button class="btn-increase" onclick="increaseQuantity()">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="WA">
+                            <div class="wish">
+                                <button class="wish-button">ADD TO WISH-LIST</button>
+                            </div>
+
+                            <div class="cart">
+                                <button class="cart-button">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-box">
+                    <div class="rating-number">4.8</div>
+                    <div class="stars">★★★★★</div>
+                    <div class="total-ratings">120 Ratings</div>
+                </div>
+                
+                <div class="individual-reviews">
+                    <div class="review-item">
+                        <h4>เจนนี่ ปาหนัน</h4>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                        <p>สินค้าดีมาก คุณภาพยอดเยี่ยม!</p>
+                    </div>
+                    <div class="review-item">
+                        <h4>ณัชชา วิบูลย์</h4>
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+                        <p>สินค้าดีแต่ส่งช้ากว่าเวลาที่คาดไว้</p>
+                    </div>
+                    <div class="review-item">
+                        <h4>ธนาภา ตราลักษณ์</h4>
+                        <div class="stars">
+                            ★★★☆☆
+                        </div>
+                        <p>สินค้าคุณภาพดีมาก แต่จัดส่งช้าไปหน่อย</p>
+                    </div>
+                </div>
+        
+            </section>
+            <div class="buy">
+                <p>You may also like to buy</p>
+            </div>
+        </div>
+
+        <!-- MEN Content -->
+        <div id="men-content" class="content" role="tabpanel" aria-labelledby="men-tab" hidden>
+            <p>Content for Men's products.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div>
+                    <h4>ABOUT US</h4>
+                    <a href="#">Store Locations</a>
+                </div>
+                <div>
+                    <h4>CUSTOMER SERVICE</h4>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div>
+                    <h4>FOLLOW US</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="image/facbook.png" alt="Facebook"></a>
+                        <a href="#"><img src="image/ig.png" alt="Instagram"></a>
+                        <a href="#"><img src="image/line.png" alt="Line"></a>
+                        <a href="#"><img src="image/x.png" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-policies">
+                <p>&copy; 2024 LAMIMO. All rights reserved</p>
+                <p>
+                    <a href="#">Cookies Policy</a> |
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="T-shirts details.js"></script>
+</body>
+
+</html>
