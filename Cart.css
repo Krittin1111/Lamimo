@@ -1,0 +1,154 @@
+/* General Reset */
+body, h1, h2, h3, p, table, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar input {
+    width: 250px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header-icons img {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Cart Section */
+.cart-section {
+    padding: 20px;
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.row-total {
+    font-weight: bold;
+}
+
+/* Summary Section */
+.summary-section {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.summary-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.checkout-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+footer p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
