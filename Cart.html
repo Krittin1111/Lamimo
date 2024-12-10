@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - LAMIMO</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1 class="logo">LAMIMO</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>🔍</button>
+            </div>
+            <div class="header-icons">
+                <a href="#"><img src="image/account.png" alt="Account" width="30"></a>
+                <a href="#"><img src="image/heart.png" alt="Wishlist" width="30"></a>
+                <a href="#"><img src="image/cart.png" alt="Cart" width="30"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="cart-section">
+            <h2 class="cart-title">Your Cart</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img src="image/product1.png" alt="Product 1" class="product-image">
+                                <div class="product-details">
+                                    <p>Crop Tee Shirt with Head Pin Design</p>
+                                    <p>Size: M</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="unit-price">578.50</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrement">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <button class="quantity-btn increment">+</button>
+                            </div>
+                        </td>
+                        <td class="row-total">578.50</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img src="image/product2.png" alt="Product 2" class="product-image">
+                                <div class="product-details">
+                                    <p>Floral Print Blouse</p>
+                                    <p>Size: S</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="unit-price">395.00</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrement">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1">
+                                <button class="quantity-btn increment">+</button>
+                            </div>
+                        </td>
+                        <td class="row-total">395.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="summary-section">
+            <h3 class="summary-title">Order Summary</h3>
+            <div class="summary-details">
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">973.50</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span>Add Info</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span id="total">973.50</span>
+                </div>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 LAMIMO. All rights reserved.</p>
+            <p><a href="#">Cookies Policy</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
