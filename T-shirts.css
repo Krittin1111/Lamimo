@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #E6E6FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    /* ระยะห่างระหว่างโลโก้และเมนู */
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.tablist {
+    display: flex;
+    gap: 10px;
+    /* เพิ่มระยะห่างระหว่างปุ่ม */
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6f63c6;
+    /* สีม่วงเข้มสำหรับตัวอักษร */
+    background-color: #E6E6FA;
+    /* พื้นหลังสีม่วงอ่อน */
+    border: 2px solid #d6cfff;
+    /* สีขอบเข้ากับโทนสีเว็บไซต์ */
+    border-radius: 25px;
+    /* รูปทรงโค้งมน */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* เพิ่มความนุ่มนวลเมื่อมีการเปลี่ยนแปลง */
+}
+
+.tab:hover {
+    background-color: #d6cfff;
+    /* สีม่วงเข้มขึ้นเมื่อโฮเวอร์ */
+    color: #fff;
+    /* ตัวอักษรสีขาวเมื่อโฮเวอร์ */
+    border-color: #6f63c6;
+    /* ขอบสีม่วงเข้ม */
+    transform: scale(1.05);
+    /* ขยายเล็กน้อย */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงา */
+}
+
+/* สไตล์เมื่อถูกเลือก */
+.tab:focus,
+.tab[aria-selected="true"] {
+    outline: none;
+    background-color: #6f63c6;
+    /* พื้นหลังม่วงเข้ม */
+    color: #fff;
+    /* ตัวอักษรสีขาว */
+    border-color: #6f63c6;
+    /* ขอบสีเดียวกัน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* เงาเด่นชัดขึ้น */
+}
+
+/* เพิ่มการเข้าถึงด้วย keyboard */
+.tab:focus-visible {
+    outline: 2px dashed #6f63c6;
+    /* กรอบสีม่วงเมื่อใช้คีย์บอร์ด */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 55px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    /* ระยะห่างระหว่างไอคอน */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 15px;
+    /* เพิ่มขนาด Padding เพื่อให้ดูสมดุล */
+    border-radius: 25px;
+    /* มุมมนแบบ Pill Shape */
+    transition: all 0.3s ease-in-out;
+    /* เพิ่ม Transition เพื่อให้การเปลี่ยนแปลงดูนุ่มนวล */
+    background-color: transparent;
+    /* เริ่มต้นด้วยพื้นหลังโปร่งใส */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเล็กน้อย */
+}
+
+.menu a:hover {
+    background-color: #d6cfff;
+    /* สีฟ้าสดใสเมื่อโฮเวอร์ */
+    color: #fff;
+    /* ข้อความสีขาวเมื่อโฮเวอร์ */
+    transform: scale(1.05);
+    /* ขยายเล็กน้อยเมื่อโฮเวอร์ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้เด่น */
+}
+
+.menu a.active {
+    background-color: #d6cfff;
+    /* สีพื้นหลังของลิงก์ที่ active */
+    color: black;
+    /* สีตัวอักษรดำ */
+    border: 2px solid #d6cfff;
+    /* ขอบล้อมรอบด้วยสีม่วงเข้ม */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้โดดเด่น */
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a.active:hover {
+    background-color: #6f63c6;
+    /* เปลี่ยนเป็นสีเข้มขึ้นเมื่อโฮเวอร์ */
+    transform: scale(1.08);
+    /* ขยายเพิ่มอีกเล็กน้อย */
+}
+
+
+/* Navigation Bar */
+.navbar {
+    background-color: #e0f7ec;
+    /* สีพื้นหลังของแถบการนำทาง */
+    padding: 15px 20px;
+    /* เพิ่ม padding ให้แถบดูโปร่งสบายขึ้น */
+    display: flex;
+    justify-content: center;
+    /* จัดลิงก์ให้อยู่กลางในแนวนอน */
+    align-items: center;
+    /* จัดลิงก์ให้อยู่กลางในแนวตั้ง */
+    gap: 100px;
+    /* ระยะห่างระหว่างหมวดหมู่ */
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงาเล็กน้อย */
+    border-radius: 8px;
+    /* ทำมุมโค้งมน */
+}
+
+/* ลิงก์ใน Navbar */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    /* เพิ่ม padding ให้ข้อความสมดุล */
+    border-radius: 5px;
+    /* ทำมุมลิงก์ให้โค้งมน */
+    transition: background-color 0.3s, color 0.3s;
+    /* เพิ่มการเคลื่อนไหวเมื่อ hover */
+    display: flex;
+    justify-content: center;
+    /* จัดข้อความในลิงก์ให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
+    /* จัดข้อความในลิงก์ให้อยู่กึ่งกลางแนวตั้ง */
+    min-width: 120px;
+    /* กำหนดความกว้างขั้นต่ำของลิงก์ให้เท่ากัน */
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลาง */
+}
+
+/* Hover Effect */
+.navbar a:hover {
+    background-color: #b3e2cc;
+    /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: #222;
+    /* ปรับสีตัวอักษรเมื่อ hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาเล็กน้อย */
+}
+
+/* เมนูแบบดรอปดาวน์ */
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-content {
+    display: none;
+    /* ซ่อนเมนูย่อย */
+    position: absolute;
+    background-color: #ffffff;
+    /* สีพื้นหลังของเมนูย่อย */
+    min-width: 250px;
+    /* ความกว้างขั้นต่ำของเมนูย่อย */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงา */
+    border-radius: 4px;
+    /* ทำมุมโค้ง */
+    z-index: 1000;
+    margin-top: 10px;
+    padding: 10px 0;
+    /* เพิ่ม padding ภายในเมนูย่อย */
+}
+
+/* ลิงก์ในเมนูย่อย */
+.dropdown-content a {
+    color: #333;
+    /* สีตัวอักษรในเมนูย่อย */
+    padding: 10px 20px;
+    /* เพิ่ม padding ให้สมดุล */
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    /* จัดข้อความให้อยู่กึ่งกลาง */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* เพิ่มเอฟเฟกต์ */
+}
+
+/* Hover ในเมนูย่อย */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    /* สีพื้นหลังเมื่อ hover */
+    color: #000;
+    /* สีตัวอักษรเมื่อ hover */
+}
+
+/* แสดงเมนูย่อยเมื่อชี้เมาส์ */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+    /* เพิ่มแอนิเมชัน */
+}
+
+/* เอฟเฟกต์แอนิเมชัน */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content{
+    height: 1400px;
+}
+
+.breadcrumb {
+    margin-top: 30px;
+    margin-left: 110px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* ระยะห่างระหว่างองค์ประกอบ */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างจากเนื้อหาอื่น */
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    /* ลบเส้นใต้ */
+    color: #333;
+    /* สีของลิงก์ */
+    transition: color 0.3s ease;
+    /* เอฟเฟกต์สีเมื่อ Hover */
+}
+
+.breadcrumb a:hover {
+    color: #555;
+    /* เปลี่ยนสีเมื่อ Hover */
+}
+
+.breadcrumb span {
+    color: #999;
+    /* สีของตัวแบ่ง (>) */
+}
+
+/* สำหรับส่วนของ Banner */
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+.banner img {
+    width: 1500px;
+    height: 200px;
+    object-fit: cover; /* ปรับให้รูปภาพครอบคลุมพื้นที่ทั้งหมด */
+    object-position: center; /* ตำแหน่งการจัดวางรูปภาพ */
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 30px; /* ระยะห่างระหว่างสินค้า */
+    padding: 20px;
+}
+
+/* Products */
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของกล่อง */
+    width: 100%; /* ปรับขนาดให้เข้ากับคอลัมน์ Grid */
+    max-width: 300px; /* กำหนดความกว้างสูงสุด */
+    margin: auto; /* จัดกึ่งกลางในคอลัมน์ */
+    padding: 15px; /* เพิ่ม Padding ภายในกล่อง */
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid #ddd; /* เส้นขอบ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เอฟเฟกต์เมื่อ hover */
+}
+
+/* ลบเส้นขีดใต้จากลิงก์ทั้งหมด */
+.product a {
+    text-decoration: none;
+    outline: none; /* ลบการเน้นของลิงก์ */
+}
+
+/* เมื่อลิงก์ได้รับการโฟกัส (เมื่อคลิกหรือกด Tab) */
+.product a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+/* เมื่อลิงก์ถูกคลิก (active) */
+.product a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+/* เมื่อลิงก์ถูกเยี่ยมชมแล้ว (visited) */
+.product a:visited {
+    text-decoration: none;
+}
+
+
+.product img {
+    width: 100%; /* ปรับขนาดภาพให้เต็มกล่อง */
+    height: auto; /* รักษาสัดส่วนภาพ */
+    border-bottom: 1px solid #ddd; /* เส้นใต้ภาพ */
+    margin-bottom: 15px;
+}
+
+.product p {
+    margin: 10px 0; /* ระยะห่างระหว่างข้อความ */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    color: #333; /* สีข้อความ */
+    text-align: left;
+}
+
+.product .price {
+    font-size: 16px; /* ขนาดตัวอักษรของราคา */
+    font-weight: bold; /* ทำให้ตัวหนา */
+    color: #333;
+}
+
+/* เอฟเฟกต์เมื่อเลื่อนเมาส์ */
+.product:hover {
+    transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อ hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* เพิ่มเงา */
+}
+
+
+/* Pagination Styling */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+    transform: translateY(150px); /* ขยับลงมา 20px */
+}
+
+.pagination-numbers {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 5px;
+}
+
+.pagination-numbers a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.pagination-numbers a:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+.pagination button {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.pagination button:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+ /* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.pagination-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 5px;
+}
+
+.pagination-wrapper a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.pagination-wrapper a.active {
+    background: #e60023;
+    color: #fff;
+    animation: bounce 0.5s ease;
+}
+
+.pagination-wrapper a:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+.pagination button {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.pagination button:hover {
+    background: #e60023;
+    color: #fff;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Hide scrollbar */
+.pagination-wrapper {
+    scrollbar-width: none; /* Firefox */
+}
+
+.pagination-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #E6E6FA;
+    margin-top: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-links div {
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.footer-links a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #777;
+    margin: 15px auto;
+    width: 100%;
+}
+
+.footer-policies {
+    text-align: center;
+}
+
+.footer-policies p {
+    margin: 5px 0;
+}
+
+.footer-policies p a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-policies p a:hover {
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .content-wrapper,
+    header,
+    footer {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
+
+
