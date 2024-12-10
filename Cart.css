@@ -59,42 +59,132 @@ header {
     margin-bottom: 20px;
 }
 
-.cart-table th, .cart-table td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #ddd;
+/* จัดข้อความให้อยู่ตรงกลางในทุกช่องของตาราง */
+.cart-table th,
+.cart-table td {
+    text-align: center; /* จัดให้อยู่กึ่งกลางในแนวนอน */
+    vertical-align: middle; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+    padding: 10px; /* เพิ่ม Padding เพื่อความสมดุล */
 }
 
+/* เพิ่มขนาดตัวอักษรให้หัวตาราง (Header) */
+.cart-table th {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f5f5f5; /* สีพื้นหลังของหัวตาราง */
+    border-bottom: 2px solid #ddd; /* เส้นขอบล่าง */
+}
+
+/* ข้อความในช่องทั่วไป */
+.cart-table td {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd; /* เส้นขอบล่างของแต่ละช่อง */
+}
+
+/* จัดเรียงข้อมูลในคอลัมน์ Product */
 .product-info {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center; /* จัดข้อความให้อยู่ในแนวเดียวกับภาพ */
+    gap: 15px; /* เพิ่มระยะห่างระหว่างภาพและข้อความ */
 }
 
+/* ปรับขนาดของภาพสินค้า */
 .product-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    object-fit: cover;
+    width: 60px; /* กำหนดความกว้างของภาพ */
+    height: 60px; /* กำหนดความสูงของภาพ */
+    border-radius: 5px; /* เพิ่มความโค้งมน */
+    object-fit: cover; /* จัดภาพให้พอดีกับกรอบ */
 }
 
+/* การจัดเรียงข้อความในส่วนของรายละเอียดสินค้า */
+.product-details {
+    text-align: left; /* จัดข้อความให้อยู่ชิดซ้าย */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    line-height: 1.5; /* ระยะห่างระหว่างบรรทัด */
+    color: #333; /* สีของข้อความ */
+}
+
+.product-details p {
+    margin: 0; /* ลบระยะห่างบน-ล่างของข้อความ */
+}
+
+/* ปรับขนาดของช่อง Quantity */
+.quantity-input {
+    width: 50px; /* กำหนดความกว้าง */
+    height: 30px; /* กำหนดความสูง */
+    text-align: center; /* จัดตำแหน่งตัวเลขให้อยู่ตรงกลาง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    border: 1px solid #ddd; /* เส้นขอบ */
+    border-radius: 5px; /* ความโค้งมน */
+    margin: 0 5px; /* ระยะห่างระหว่างปุ่ม + และ - */
+}
+
+/* จัดตำแหน่งปุ่มและช่อง Quantity ให้อยู่ในแนวเดียวกัน */
 .quantity-control {
     display: flex;
-    align-items: center;
-    gap: 5px;
+    align-items: center; /* จัดแนวในแนวตั้งให้อยู่กึ่งกลาง */
+    justify-content: center; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+    gap: 5px; /* ระยะห่างระหว่างปุ่มและช่อง */
 }
 
-.quantity-btn {
-    background-color: #4CAF50;
+/* ปุ่ม Decrement (สีแดง) */
+.quantity-btn.decrement {
+    background-color: #FF4C4C; /* สีแดง */
     color: white;
     border: none;
     padding: 5px;
     border-radius: 3px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.row-total {
-    font-weight: bold;
+.quantity-btn.decrement:hover {
+    background-color: #E63939; /* สีแดงเข้มเมื่อ Hover */
+}
+
+/* ปุ่ม Increment (สีเขียว) */
+.quantity-btn.increment {
+    background-color: #4CAF50; /* สีเขียว */
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn.increment:hover {
+    background-color: #388E3C; /* สีเขียวเข้มเมื่อ Hover */
+}
+
+/* Checkbox Style */
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #4CAF50;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin: auto;
+    display: block;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"><path d="M6.173 10.853L3.3 8.15a.5.5 0 1 0-.7.7l3.173 3.002a.5.5 0 0 0 .738-.057L13.448 3.864a.5.5 0 1 0-.824-.564L6.173 10.853z"/></svg>');
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.product-checkbox {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Summary Section */
@@ -146,9 +236,4 @@ footer {
     text-align: center;
     font-size: 14px;
     border-top: 1px solid #ddd;
-}
-
-footer p a {
-    color: #4CAF50;
-    text-decoration: none;
 }
